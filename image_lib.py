@@ -52,6 +52,7 @@ def download_image(image_url):
             return response.content
         else:
             print('Please try again!')
+    #Catching exceptions too - learnt this from youtube
     except requests.RequestException as e:
         print('Error Occurred:', e)
             
