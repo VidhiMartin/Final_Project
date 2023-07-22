@@ -5,13 +5,38 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "apod_date",
+            "name": "apod_desktop",
+            "type": "python",
+            "request": "launch",
+            "program": "apod_desktop.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": ["2023-07-21"] 
+            
+        }, 
+        {
+            "name": "apod_api",
             "type": "python",
             "request": "launch",
             "program": "apod_api.py",
             "console": "integratedTerminal",
             "justMyCode": true, 
-            
+        },
+        {
+            "name": "image_lib",
+            "type": "python",
+            "request": "launch",
+            "program": "image_lib.py",
+            "console": "integratedTerminal",
+            "justMyCode": true, 
+        }, 
+        {
+            "name": "image_viewer",
+            "type": "python",
+            "request": "launch",
+            "program": "image_viewer.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
         }
     ]
 }
