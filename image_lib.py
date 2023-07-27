@@ -74,9 +74,10 @@ def save_image_file(image_data, image_path):
     try:
         with open(image_path, 'wb') as file:
             file.write(image_data)
-        return None
+        return True
     except OSError as e:
         print("Error: Couldn't save image", e)
+
 
 def set_desktop_background_image(image_path):
     """Sets the desktop background image to a specific image.
