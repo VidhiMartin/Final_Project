@@ -2,11 +2,13 @@
 Library for interacting with NASA's Astronomy Picture of the Day API.
 '''
 import requests
+import sys
+
 def main():
     # TODO: Add code to test the functions in this module
 
     #apod_date test function!
-    apod_date = '2023-07-12'
+    apod_date = sys.argv[1]
     apod_info = get_apod_info(apod_date)
     if apod_info is not None:
         print('Apod information retreievd successfully!')
