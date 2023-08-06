@@ -6,6 +6,6 @@ apod_desktop.init_apod_cache()
 
 # TODO: Create the GUI
 root = Tk()
-root.geometry('600x400')
+root.geometry('600x600')
 
 root.mainloop()
