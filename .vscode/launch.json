@@ -14,29 +14,6 @@
             "args": [] 
             
         }, 
-        {
-            "name": "apod_api",
-            "type": "python",
-            "request": "launch",
-            "program": "apod_api.py",
-            "console": "integratedTerminal",
-            "justMyCode": true, 
-        },
-        {
-            "name": "image_lib",
-            "type": "python",
-            "request": "launch",
-            "program": "image_lib.py",
-            "console": "integratedTerminal",
-            "justMyCode": true, 
-        }, 
-        {
-            "name": "image_viewer",
-            "type": "python",
-            "request": "launch",
-            "program": "image_viewer.py",
-            "console": "integratedTerminal",
-            "justMyCode": true
-        }
+        
     ]
 }

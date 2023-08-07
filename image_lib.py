@@ -19,7 +19,7 @@ def main():
         print('Failed to retrieve image!')
     
     #for testing save image function
-    image_path = rf"C:\Users\16476\Documents\Scripting Applications\Final_Project\{image_path}"
+    image_path = r"C:\Users\16476\Documents\Scripting Applications\Final_Project"
     saved = save_image_file(image_data, image_path)
     if saved:
         print("Imaged saved successfully!")
@@ -84,7 +84,7 @@ def save_image_file(image_data, image_path):
         print("Error: Couldn't save image", e)
 
 
-def set_desktop_background_image(image_data):
+def set_desktop_background_image(image_path):
     """Sets the desktop background image to a specific image.
 
     Args:
@@ -98,12 +98,7 @@ def set_desktop_background_image(image_data):
         if platform.system() == 'Windows':
             # Windows-specific code to set desktop background
             
-            ctypes.windll.user32.SystemParametersInfoW(20, 0, image_data, 3)
-            return True
-        elif platform.system() == 'Darwin':
-            # macOS-specific code to set desktop background
-            if_successfull_script = f"Ask \"Finder\" to set desktop picture to: \"{image_path}\"'"
-            os.system(if_successfull_script)
+            ctypes.windll.user32.SystemParametersInfoW(20, 0, image_path.encode('utf-16'), 3)
             return True
         else:
             print("Unsupported platform for setting desktop background!")
