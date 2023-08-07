@@ -19,7 +19,7 @@ def main():
         print('Failed to retrieve image!')
     
     #for testing save image function
-    image_path = r"C:\Users\16476\Documents\Scripting Applications\Final_Project"
+    image_path = r"C:\Users\16476\Documents\Scripting Applications\Final_Project\images"
     saved = save_image_file(image_data, image_path)
     if saved:
         print("Imaged saved successfully!")
