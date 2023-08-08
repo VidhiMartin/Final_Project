@@ -5,6 +5,7 @@ import requests
 import platform
 import ctypes
 import hashlib
+from PIL import Image
 
 def main():
     # TODO: Add code to test the functions in this module
@@ -76,11 +77,12 @@ def save_image_file(image_data, image_path):
     """
     # TODO: Complete function body
     try:
-        with open(image_path, 'wb') as file:
-            file.write(image_data)
+        with Image.open(io.BytesIO(image_data)) as img:
+            img.save(image_path)
         return True
-    except OSError as e:
+    except Exception as e:
         print("Error: Couldn't save image", e)
+        return False
 
 
 def set_desktop_background_image(image_path):
