@@ -2,7 +2,6 @@
 Library of useful functions for working with images.
 '''
 import requests
-import os
 import platform
 import ctypes
 import hashlib
