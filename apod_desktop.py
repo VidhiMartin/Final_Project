@@ -285,7 +285,7 @@ def get_apod_info(image_id):
             apod_info = {
                 'title': result[0],
                 'explanation': result[1],
-                'file_path': 'TBD',
+                'file_path': result[2]
             }
             return apod_info
         else:

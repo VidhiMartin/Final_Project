@@ -83,7 +83,7 @@ lbl_explanation = ttk.Label(frm_explanation, wraplength=980)
 lbl_explanation.grid(row=0)
 
 # Populate the image select frame
-lbl_sel_image = ttk.Label(lblfrm_select)
+lbl_sel_image = ttk.Label(lblfrm_select, text = date.today)
 lbl_sel_image.grid(row=0, column=0, padx=(10,5), pady=10)
 
 cbox_sel_image = ttk.Combobox(lblfrm_select, state='readonly', width=45)
