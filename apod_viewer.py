@@ -10,7 +10,7 @@ Usage:
 from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
-from Tkcalendar import DateEntry
+from tkcalendar import DateEntry
 import os
 import ctypes
 from datetime import date
@@ -55,8 +55,8 @@ frm_explanation.grid(row=1, columnspan=2, padx=10, sticky=NSEW)
 
 
 # Create the frame to hold the image select widgets
-lblfrm_select = # Complete this portion
-lblfrm_select.grid(row=2, column=0, padx=(10,5), pady=10, sticky=NSEW)
+lblfrm_select = ttk.LabelFrame(root, text="Select Image")
+lblfrm_select.grid(row=2, column=0, padx=(10, 5), pady=10, sticky="nsew")
 
 # Create the frame to hold the image download widgets
 lblfrm_download = ttk.LabelFrame(root, text="Get More Images")
