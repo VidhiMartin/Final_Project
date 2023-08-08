@@ -6,6 +6,7 @@ import platform
 import ctypes
 import hashlib
 from PIL import Image
+import io
 
 def main():
     # TODO: Add code to test the functions in this module
