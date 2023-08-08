@@ -17,6 +17,7 @@ from datetime import date
 import image_lib
 import apod_desktop
 
+
 # Initialize the image cache
 apod_desktop.init_apod_cache()
 selected_apod_info = None
@@ -82,7 +83,7 @@ lbl_explanation = ttk.Label(frm_explanation, wraplength=980)
 lbl_explanation.grid(row=0)
 
 # Populate the image select frame
-lbl_sel_image = ttk.Label(lblfrm_select, text="Select Image:")
+lbl_sel_image = ttk.Label(lblfrm_select)
 lbl_sel_image.grid(row=0, column=0, padx=(10,5), pady=10)
 
 cbox_sel_image = ttk.Combobox(lblfrm_select, state='readonly', width=45)
@@ -116,7 +117,7 @@ cbox_sel_image.grid(row=0, column=1, pady=10)
 
 txt_set_desktop = 'Set as Desktop'
 btn_set_desktop = ttk.Button(lblfrm_select, text=txt_set_desktop, width=len(txt_set_desktop) + 2)
-btn_set_desktop.state(['disabled'])
+btn_set_desktop.state(['!disabled'])
 
 def handle_set_desktop():
     if selected_apod_info is None: return
@@ -140,7 +141,7 @@ btn_download_image = ttk.Button(lblfrm_download, text=txt_download_image, width=
 def handle_download_image():
     # Get the APOD info for the selected date
     sel_date = cal_sel_date.get_date()
-    apod_id = apod_desktop.add_apod_to_cache(sel_date)  # Complete this portion
+    apod_id = apod_desktop.add_apod_to_cache(sel_date) 
     if apod_id != 0:
         # Update the list of available images
         cbox_sel_image['values'] = apod_desktop.get_all_apod_titles()
