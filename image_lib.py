@@ -14,7 +14,7 @@ def main():
 
 
     #for testing download image function
-    image_url = 'https://apod.nasa.gov/apod/image/2308/MoonsJupiter_Coy_2630.jpg'
+    image_url = '\https://api.nasa.gov/planetary/apod'
     image_data = download_image(image_url)
     if image_data is not None:
         print('Image retrieved successfully!')
