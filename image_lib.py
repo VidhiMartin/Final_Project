@@ -14,7 +14,7 @@ def main():
 
 
     #for testing download image function
-    image_url = '\https://api.nasa.gov/planetary/apod'
+    image_url = 'https://apod.nasa.gov/apod/image/2307/Ngc1398_Hanson_2752.jpg'
     image_data = download_image(image_url)
     if image_data is not None:
         print('Image retrieved successfully!')
@@ -38,11 +38,6 @@ def main():
     else:
         print("Couldn't set the desktop background image!")
 
-    #for testing the scale function
-    
-    max_size = (1200, 1200)
-    scaled_image = scale_image(max_size)
-    print(f"The size of the image is {scaled_image}.")
 
 def download_image(image_url):
     """Downloads an image from a specified URL.
