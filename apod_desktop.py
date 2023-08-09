@@ -254,7 +254,7 @@ def determine_apod_file_path(image_title, image_url):
 
     file_ext = os.path.splitext(image_url)[1]
 
-    image_path = os.path.join({image_cache_dir}, {image_title}, {file_ext})
+    image_path = os.path.join(image_cache_dir, image_title + file_ext)
     # Hint: Use regex and/or str class methods to determine the filename.
     return image_path
 
