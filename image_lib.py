@@ -7,6 +7,7 @@ import ctypes
 import hashlib
 from PIL import Image
 import io
+import os
 
 def main():
     # TODO: Add code to test the functions in this module
@@ -20,15 +21,16 @@ def main():
         print('Failed to retrieve image!')
     
     #for testing save image function
-    image_path = r"C:\Users\16476\Documents\Scripting Applications\Final_Project\images"
-    saved = save_image_file(image_data, image_path)
+    image_filename = image_url.split('/')[-1]  # Extract the filename from the URL
+    image_file_path = os.path.join(r"C:\Users\16476\Documents\Scripting Applications\Final_Project\images", image_filename)
+    saved = save_image_file(image_data, image_file_path)
     if saved:
-        print("Imaged saved successfully!")
+        print("Image saved successfully!")
     else:
         print("Couldn't save image!")
 
     #for testing background function
-    saved_in_background = set_desktop_background_image(image_path)
+    saved_in_background = set_desktop_background_image(image_file_path)
     if saved_in_background:
         print("Desktop background changed successfully!")
     else:
