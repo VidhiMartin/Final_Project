@@ -20,6 +20,7 @@ import image_lib
 import re
 
 
+
 # Full paths of the image cache folder and database
 # - The image cache directory is a subdirectory of the specified parent directory.
 # - The image cache database is a sqlite database located in the image cache directory.

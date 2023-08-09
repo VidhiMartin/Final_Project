@@ -9,11 +9,12 @@ from PIL import Image
 import io
 import os
 
+
 def main():
-    # TODO: Add code to test the functions in this module
+
 
     #for testing download image function
-    image_url = 'https://apod.nasa.gov/apod/image/2307/Ngc1398_Hanson_2752.jpg'
+    image_url = 'https://apod.nasa.gov/apod/image/2308/MoonsJupiter_Coy_2630.jpg'
     image_data = download_image(image_url)
     if image_data is not None:
         print('Image retrieved successfully!')
@@ -30,6 +31,7 @@ def main():
         print("Couldn't save image!")
 
     #for testing background function
+    print("Setting desktop background...")
     saved_in_background = set_desktop_background_image(image_file_path)
     if saved_in_background:
         print("Desktop background changed successfully!")
@@ -37,9 +39,9 @@ def main():
         print("Couldn't set the desktop background image!")
 
     #for testing the scale function
-    image_size = (1200, 800)
-    max_size = (800, 600)
-    scaled_image = scale_image(image_size, max_size)
+    
+    max_size = (1200, 1200)
+    scaled_image = scale_image(max_size)
     print(f"The size of the image is {scaled_image}.")
 
 def download_image(image_url):
@@ -73,7 +75,7 @@ def save_image_file(image_data, image_path):
 
     Args:
         image_data (bytes): Binary image data
-        image_path (str): Path to save image file
+        image_path (str)po: Path to save image file
 
     Returns:
         bool: True, if succcessful. False, if unsuccessful
@@ -99,6 +101,7 @@ def set_desktop_background_image(image_path):
     """
     # TODO: Complete function body
     try:
+        print("Setting desktop background image:", image_path)
         if platform.system() == 'Windows':
             # Windows-specific code to set desktop background
             
@@ -128,7 +131,7 @@ def calculate_image_sha256(image_data):
         return None
     
 
-def scale_image(image_size, max_size=(800, 600)):
+def scale_image(image_size, max_size=(1200, 1200)):
     """Calculates the dimensions of an image scaled to a maximum width
     and/or height while maintaining the aspect ratio  
 
