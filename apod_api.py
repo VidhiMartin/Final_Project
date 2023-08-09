@@ -3,12 +3,13 @@ Library for interacting with NASA's Astronomy Picture of the Day API.
 '''
 import requests
 import sys
+from datetime import date
 
 def main():
     # TODO: Add code to test the functions in this module
 
     #apod_date test function!
-    apod_date = sys.argv[1]
+    apod_date = get_apod_date()
     apod_info = get_apod_info(apod_date)
     if apod_info is not None:
         print('Apod information retreievd successfully!')
@@ -21,7 +22,30 @@ def main():
         print('Apod Image retrieved succesfully!')
     else:
         print('Failed to retrieve apod image!')
-         
+
+
+def get_apod_date():
+    """Gets the APOD date
+     
+    The APOD date is taken from the first command line parameter.
+    Validates that the command line parameter specifies a valid APOD date.
+    Prints an error message and exits script if the date is invalid.
+    Uses today's date if no date is provided on the command line.
+
+    Returns:
+        date: APOD date
+    """
+    # TODO: Complete function body
+    if len(sys.argv) > 1:
+        try:
+            apod_date = date.fromisoformat(sys.argv[1])
+        except:
+            print("Error: Incorrect date format!")
+            sys.exit(1)
+    else:
+        apod_date = date.today()
+
+    return apod_date       
 
 def get_apod_info(apod_date):
     """Gets information from the NASA API for the Astronomy 
