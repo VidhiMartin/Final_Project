@@ -19,11 +19,10 @@ import apod_api
 import image_lib
 import re
 
-
-
 # Full paths of the image cache folder and database
 # - The image cache directory is a subdirectory of the specified parent directory.
 # - The image cache database is a sqlite database located in the image cache directory.
+
 script_dir = os.path.dirname(os.path.abspath(__file__))
 image_cache_dir = os.path.join(script_dir, 'images')
 image_cache_db = os.path.join(image_cache_dir, 'image_cache.db')
@@ -159,6 +158,7 @@ def add_apod_to_cache(apod_date):
     return 0
 
 def add_apod_to_db(title, explanation, file_path, sha256):
+
     """Adds specified APOD information to the image cache DB.
      
     Args:
