@@ -100,7 +100,7 @@ def set_desktop_background_image(image_path):
         if platform.system() == 'Windows':
             # Windows-specific code to set desktop background
             
-            ctypes.windll.user32.SystemParametersInfoW(20, 0, image_path.encode('utf-16'), 3)
+            ctypes.windll.user32.SystemParametersInfoW(0, image_path.encode('utf-16'), 3)
             return True
         else:
             print("Unsupported platform for setting desktop background!")
